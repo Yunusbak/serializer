@@ -15,6 +15,7 @@ class Artist(models.Model):
         return f'{self.get_full_name()}'
 
 class Album(models.Model):
+    objects = None
     title = models.CharField(max_length=50)
     artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
     image = models.ImageField(upload_to=SaveMediaFiles.image_save_album)
